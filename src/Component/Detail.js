@@ -12,16 +12,9 @@ const Detail = () => {
   const [ingredient, setIngredient] = useState();
   //재료 데이터 다듬기...
   useEffect(() => {
-    let arry = location.state.list.RCP_PARTS_DTLS.split(",");
-    let arry2 = [];
-    for (let index = 0; index < arry.length; index++) {
-      arry2.push(arry[index].split("\n"));
-    }
-    setIngredient(
-      arry2.flat(1).filter((element) => {
-        return element !== undefined && element !== null && element !== "";
-      })
-    );
+    const ingredientList = location.state.list.RCP_PARTS_DTLS.split(")").map((str)=>str.replace(/, /g, "").trim()+")");
+    ingredientList.pop();
+    setIngredient(ingredientList);
   }, [location.state.list.RCP_PARTS_DTLS]);
 
   //영양성분
@@ -193,9 +186,9 @@ const IngredientUl = styled.ul`
   list-style: none;
 `;
 const IngredientLi = styled.li`
-  width: 250px;
+  width: 43%;
   margin-bottom: 5px;
-  padding: 10px 0;
+  padding: 10px 10px;
   border-bottom: 2px solid #dfdfdf;
 `;
 
