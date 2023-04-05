@@ -1,0 +1,7 @@
+{
+    "auto-close-tag.enableAutoCloseSelfClosingTag": true,
+    "auto-close-tag.enableAutoCloseTag": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.guides.bracketPairs": true,
+    "editor.bracketPairColorization.enabled": true
+}
