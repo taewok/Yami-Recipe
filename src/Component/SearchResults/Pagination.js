@@ -12,46 +12,55 @@ const Pagination = ({ postsPerPage, totalPosts, setCurrentPageNumber }) => {
     pageNumbers.push(i);
   }
 
-  const onClick = (list)=>{
+  const onClick = (list) => {
     setCurrentPageNumber(list);
-    navigate(`${list}`,{state:{
-      num:list
-    }})
-  }
+    navigate(`${list}`, {
+      state: {
+        num: list,
+      },
+    });
+  };
 
   //사용자가 이전 버튼을 눌러 첫 렌더링시 url주소에 num을 가져와 페이지 번호에 알맞은 데이터 리스를 출력
-  useEffect(()=>{
-    console.log(location.state.num)
+  useEffect(() => {
+    console.log(location.state.num);
     setCurrentPageNumber(location.state.num);
-  },[location.state.num, setCurrentPageNumber])
+  }, [location.state.num, setCurrentPageNumber]);
 
   return (
     <PaginationDiv>
-        <PaginationUl>
+      <PaginationUl>
         {pageNumbers.map((list) => (
-        <PaginationLl key={list} onClick={()=>onClick(list)}>{list}</PaginationLl>
-      ))}
-        </PaginationUl>
+          <PaginationLl key={list} onClick={() => onClick(list)}>
+            {list}
+          </PaginationLl>
+        ))}
+      </PaginationUl>
     </PaginationDiv>
   );
 };
 
 const PaginationDiv = styled.div`
-    display:flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 50px;
-`
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+`;
 const PaginationUl = styled.ul`
-    display:flex;
-    padding:0;
-    list-style: none;
-`
+  display: flex;
+  padding: 0;
+  list-style: none;
+`;
 const PaginationLl = styled.li`
-    margin:0 10px;
-    padding:0 10px;
-    font-size: 20px;
-    cursor: pointer;
-`
+  margin: 0 10px;
+  padding: 0 10px;
+  font-size: 20px;
+  cursor: pointer;
+  @media screen and (max-width: 640px) {
+    margin: 0 5px;
+    padding: 0 5px;
+    font-size: 1.3rem;
+  }
+`;
 
 export default Pagination;

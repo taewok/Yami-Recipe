@@ -44,16 +44,28 @@ const Search = ({ list }) => {
 };
 
 const SearchDiv = styled.div`
-  width: 1000px;
+  width: 80vw;
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+  }
 `;
 const SearchUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
+  @media screen and (max-width: 1000px) {
+    width: 80%;
+  }
 `;
 const SearchLi = styled.li`
   display: flex;
-  width: 100%;
+  width: 80%;
   height: 200px;
   padding: 15px 20px;
   border-bottom: 2px solid #dfdfdf;
@@ -64,6 +76,26 @@ const SearchLi = styled.li`
       height: 100%;
     }
   }
+  @media screen and (max-width: 1000px) {
+    height: auto;
+    a {
+      height: 100%;
+      img {
+        width: 20vw;
+        height: 90%;
+      }
+    }
+  }
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+    a {
+      img {
+        width: 50vw;
+        height: 100%;
+      }
+    }
+  }
 `;
 const CookingTypeDiv = styled.div`
   display: flex;
@@ -72,20 +104,39 @@ const CookingTypeDiv = styled.div`
   span:nth-child(1) {
     margin-right: 20px;
   }
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `;
 const MenuExplanationDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 10px;
+  max-width: 100%;
+  @media screen and (max-width: 1000px) {
+    width: calc(100% - 200px);
+  }
+  @media screen and (max-width: 640px) {
+    width: 100%;
+  }
 `;
 const MenuName = styled.span`
   color: #555555;
   font-size: 1.2rem;
   font-weight: bold;
+  @media screen and (max-width: 640px) {
+    text-align: center;
+  }
 `;
 const MenuMaterials = styled.p`
   color: #555555;
+  @media screen and (max-width: 1000px) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 export default Search;

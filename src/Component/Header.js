@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import logo from "../LOGO.png";
 import { useNavigate } from "react-router-dom";
-import {GoThreeBars} from "react-icons/go";
+import { GoThreeBars } from "react-icons/go";
 
 const Header = ({ setList }) => {
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const Header = ({ setList }) => {
         <Menuli>
           <span>로그인</span>
           <span>회원가입</span>
-          <GoThreeBars/>
+          <GoThreeBars />
         </Menuli>
       </HeaderUl>
     </HeaderDiv>
@@ -71,18 +71,22 @@ const HeaderDiv = styled.header`
 const HeaderUl = styled.ul`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   list-style: none;
   @media screen and (max-width: 1000px) {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 const Logoli = styled.li`
+  margin-right: -60px;
   margin-left: -50px;
   margin-top: -10px;
+  margin-bottom: -30px;
   img {
     width: 350px;
     height: 145px;
@@ -90,20 +94,11 @@ const Logoli = styled.li`
 `;
 const SearchForm = styled.form`
   display: flex;
-  align-items: flex-end;
-  position: relative;
-  padding-bottom: 20px;
-  &::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    background-color: #69b645;
-  }
+  align-items: center;
+  width: 450px;
+  height: 40px;
   select {
-    position: absolute;
-    padding-left: 2px;
-    padding-bottom: 5px;
-    height: 40px;
+    height: 100%;
     background-color: transparent;
     border: none;
     outline: none;
@@ -111,13 +106,17 @@ const SearchForm = styled.form`
     cursor: pointer;
   }
   input {
-    width: 450px;
-    height: 40px;
-    padding-left: 65px;
-    border: 2px solid #989898;
+    padding: 5px;
+    width: 90%;
     border-radius: 5px;
     outline: none;
     font-size: 20px;
+  }
+  @media screen and (max-width: 1000px) {
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 640px) {
+    width: 70vw;
   }
 `;
 const Menuli = styled.li`
@@ -131,7 +130,7 @@ const Menuli = styled.li`
   }
   @media screen and (max-width: 1000px) {
     position: absolute;
-    left:0;
+    left: 0;
   }
 `;
 

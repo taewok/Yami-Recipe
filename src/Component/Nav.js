@@ -26,15 +26,18 @@ const MenuUl = styled.ul`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 900px;
+  max-width: 55%;
   height: 100%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
+  @media screen and (max-width:660px){
+    max-width: 88%;
+  }
 `;
 const MenuItem = styled.li`
-  padding: 5px 0px;
-  font-size: 22px;
+  padding: 5px 8px;
+  font-size: 1.2rem;
   color: white;
   font-weight: 400;
   cursor: pointer;
