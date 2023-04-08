@@ -1,18 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import {BsFillArrowLeftCircleFill} from "react-icons/bs"
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 const Detail = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const data = location.state.list;
 
+  //레시피 방법 리스트 배열
+  const [recipeList, setRecipeList] = useState([]);
+  //레시피 방법 리스트 state에 넣기
+  useEffect(() => {
+    for (let i = 1; i <= 10; i++) {
+      if (
+        eval(`data.MANUAL0${i}`) !== undefined &&
+        eval(`data.MANUAL0${i}`) !== ""
+      ) {
+        recipeList.push(eval(`data.MANUAL0${i}`));
+      } else break;
+    }
+  }, []);
+
   //재료
   const [ingredient, setIngredient] = useState();
   //재료 데이터 다듬기...
   useEffect(() => {
-    const ingredientList = location.state.list.RCP_PARTS_DTLS.split(")").map((str)=>str.replace(/, /g, "").trim()+")");
+    const ingredientList = location.state.list.RCP_PARTS_DTLS.split(")").map(
+      (str) => str.replace(/, /g, "").trim() + ")"
+    );
     ingredientList.pop();
     setIngredient(ingredientList);
   }, [location.state.list.RCP_PARTS_DTLS]);
@@ -34,9 +50,12 @@ const Detail = () => {
     location.state.list.INFO_PRO,
     nutrient,
   ]);
+
   return (
     <DetailDiv>
-      <PrevBtn onClick={() => navigate(-1)}><BsFillArrowLeftCircleFill/></PrevBtn>
+      <PrevBtn onClick={() => navigate(-1)}>
+        <BsFillArrowLeftCircleFill />
+      </PrevBtn>
       <ThumbnailDiv>
         <img src={data.ATT_FILE_NO_MK}></img>
         <p>{data.RCP_NM}</p>
@@ -83,66 +102,16 @@ const Detail = () => {
       </IngredientNutrientDiv>
       <RecipeDiv>
         <RecipeUl>
-          {data.MANUAL01 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG01}></img>
-              <p>{data.MANUAL01}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL02 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG02}></img>
-              <p>{data.MANUAL02}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL03 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG03}></img>
-              <p>{data.MANUAL03}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL04 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG04}></img>
-              <p>{data.MANUAL04}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL05 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG05}></img>
-              <p>{data.MANUAL05}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL06 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG06}></img>
-              <p>{data.MANUAL06}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL07 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG07}></img>
-              <p>{data.MANUAL07}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL08 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG08}></img>
-              <p>{data.MANUAL08}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL09 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG09}></img>
-              <p>{data.MANUAL09}</p>
-            </RecipeLi>
-          )}
-          {data.MANUAL10 && (
-            <RecipeLi>
-              <img src={data.MANUAL_IMG10}></img>
-              <p>{data.MANUAL10}</p>
-            </RecipeLi>
-          )}
+          {recipeList &&
+            recipeList.map((value, index) => (
+              <RecipeLi key={index}>
+                <img
+                  src={eval(`data.MANUAL_IMG0${index + 1}`)}
+                  alt={`${index + 1}`}
+                ></img>
+                <p>{value}</p>
+              </RecipeLi>
+            ))}
         </RecipeUl>
       </RecipeDiv>
     </DetailDiv>
@@ -150,7 +119,7 @@ const Detail = () => {
 };
 
 const DetailDiv = styled.div`
- position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,13 +190,13 @@ const RecipeLi = styled.li`
 
 const PrevBtn = styled.span`
   position: absolute;
-  left:0;
-  color:#ABABAB;
+  left: 0;
+  color: #ababab;
   font-size: 2.5rem;
   cursor: pointer;
-  &:hover{
-    color:#757575;
+  &:hover {
+    color: #757575;
   }
-`
+`;
 
 export default Detail;
