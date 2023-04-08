@@ -116,9 +116,10 @@ const MenuExplanationDiv = styled.div`
   padding: 10px;
   max-width: 100%;
   @media screen and (max-width: 1000px) {
-    width: calc(100% - 200px);
+    width: calc(100% - 20vw);
   }
   @media screen and (max-width: 640px) {
+    padding: 10px 0 0 0;
     width: 100%;
   }
 `;
@@ -133,6 +134,7 @@ const MenuName = styled.span`
 const MenuMaterials = styled.p`
   color: #555555;
   @media screen and (max-width: 1000px) {
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
