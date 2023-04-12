@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import Detail from "./page/Detail";
-import Header from "./Component/Header";
 import Home from "./page/Home";
-import Nav from "./Component/Nav";
+import Nav from "./component/Nav";
 import Search from "./page/Search";
 import GlobalStyle from "./style/GlobalStyle";
+import Header from "./component/Header";
 
 function App() {
   const [list, setList] = useState();
