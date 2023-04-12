@@ -30,12 +30,16 @@ const Header = ({ setList }) => {
       )
       .then((data) => {
         console.log(data.data.COOKRCP01.row);
-        setList(data.data.COOKRCP01.row);
-        navigate("search/1", {
-          state: {
-            num: 1,
-          },
-        });
+        if (data.data.COOKRCP01.row === undefined)
+          alert("입력이 올바르지 않습니다.");
+        else {
+          setList(data.data.COOKRCP01.row);
+          navigate("search/1", {
+            state: {
+              num: 1,
+            },
+          });
+        }
       });
   };
 

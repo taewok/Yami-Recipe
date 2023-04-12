@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import styled from "styled-components";
-import Detail from "./Component/Detail";
+import Detail from "./page/Detail";
 import Header from "./Component/Header";
-import Home from "./Component/Home";
+import Home from "./page/Home";
 import Nav from "./Component/Nav";
-import Search from "./Component/SearchResults/Search";
+import Search from "./page/Search";
 import GlobalStyle from "./style/GlobalStyle";
 
 function App() {
