@@ -6,11 +6,14 @@ import Header from "./Component/Header";
 import Home from "./Component/Home";
 import Nav from "./Component/Nav";
 import Search from "./Component/SearchResults/Search";
+import GlobalStyle from "./style/GlobalStyle";
 
 function App() {
   const [list, setList] = useState();
+
   return (
     <MainGrid>
+      <GlobalStyle />
       <Header setList={setList} />
       <Nav />
       <Routes>
