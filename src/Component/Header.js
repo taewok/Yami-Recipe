@@ -56,11 +56,16 @@ const Header = ({ setList }) => {
           </select>
           <input value={text} onChange={(text) => textOnChange(text)} />
         </SearchForm>
-        <Menuli>
-          <span>로그인</span>
-          <span>회원가입</span>
-          <GoThreeBars />
-        </Menuli>
+        <MenuUl>
+          <SideMenuCheck type="checkbox" id="a" />
+          <SideMenuList>
+            <SideMenuItem>로그인</SideMenuItem>
+            <SideMenuItem>회원가입</SideMenuItem>
+          </SideMenuList>
+          <SideMenuBtn htmlFor="a">
+            <GoThreeBars />
+          </SideMenuBtn>
+        </MenuUl>
       </HeaderUl>
     </HeaderDiv>
   );
@@ -68,9 +73,7 @@ const Header = ({ setList }) => {
 
 const HeaderDiv = styled.header`
   width: 1280px;
-  @media screen and (max-width: 1300px) {
-    width: 100%;
-  }
+  max-width: 90%;
 `;
 const HeaderUl = styled.ul`
   display: flex;
@@ -123,18 +126,63 @@ const SearchForm = styled.form`
     width: 70vw;
   }
 `;
-const Menuli = styled.li`
+const MenuUl = styled.ul`
   display: flex;
   align-items: flex-end;
   margin-bottom: 30px;
-  span {
-    font-size: 20px;
-    font-weight: 700;
-    margin-left: 15px;
+  height: 100%;
+  svg {
+    display: none;
+    font-size: 2.3rem;
   }
   @media screen and (max-width: 1000px) {
+    align-items: flex-start;
+  }
+`;
+const SideMenuList = styled.ul`
+  display: flex;
+  transition: all 3s ease;
+  @media screen and (max-width: 1000px) {
     position: absolute;
-    left: 0;
+    top: 0;
+    left: 100%;
+    padding-top: 30px;
+    width: 150px;
+    height: calc(100vh - 30px);
+    background-color: red;
+  }
+`;
+const SideMenuItem = styled.ol`
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+  }
+`;
+const SideMenuCheck = styled.input`
+  display: none;
+  &:checked {
+    & + ul {
+      top: 0;
+      left: calc(100% - 150px);
+    }
+  }
+`;
+const SideMenuBtn = styled.label`
+  position: absolute;
+  top: 0;
+  right: 150px;
+  &:checked{
+    right: 200px;
+  }
+  svg {
+    display: block;
+    cursor: pointer;
   }
 `;
 
