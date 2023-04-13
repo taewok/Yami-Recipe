@@ -123,21 +123,34 @@ const DetailDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 const ThumbnailDiv = styled.div`
+  width: 550px;
+  img {
+    max-width: 100%;
+  }
   p {
+    padding: 15px 0;
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
   }
+  @media screen and (max-width: 640px) {
+    width: 80%;
+  }
 `;
 const IngredientNutrientDiv = styled.div`
   width: 700px;
-  padding: 0 90px;
+  padding: 30px 90px;
   border-top: 2.5px solid #dfdfdf;
   border-bottom: 2.5px solid #dfdfdf;
+  @media screen and (max-width: 1000px) {
+    width: 80%;
+  }
 `;
 const IngredientDiv = styled.div`
+  width: 100%;
   p {
     font-size: 1.3rem;
     font-weight: 600;
@@ -145,6 +158,11 @@ const IngredientDiv = styled.div`
       font-size: 1rem;
       padding-left: 5px;
       color: #757575;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    p {
+      text-align: center;
     }
   }
 `;
@@ -159,20 +177,32 @@ const IngredientLi = styled.li`
   margin-bottom: 5px;
   padding: 10px 10px;
   border-bottom: 2px solid #dfdfdf;
+  @media screen and (max-width: 1000px) {
+    width: 40%;
+  }
 `;
 
-const NutrientDiv = styled(IngredientDiv)``;
+const NutrientDiv = styled(IngredientDiv)`
+  padding-top: 30px;
+`;
 const NutrientUl = styled(IngredientUl)``;
 const NutrientLi = styled(IngredientLi)`
   display: flex;
   justify-content: space-between;
 `;
 
-const RecipeDiv = styled.div``;
+const RecipeDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
 const RecipeUl = styled.ul`
-  width: 800px;
-  padding: 20px 0px;
+  padding: 20px 20px;
   list-style: none;
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
 `;
 const RecipeLi = styled.li`
   display: flex;
@@ -186,16 +216,40 @@ const RecipeLi = styled.li`
     font-size: 18px;
     font-weight: bold;
   }
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 350px;
+      height: auto;
+    }
+    p {
+      padding: 15px 0;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  @media screen and (max-width: 640px) {
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
 `;
 
 const PrevBtn = styled.span`
   position: absolute;
-  left: 0;
+  left: 10vw;
   color: #ababab;
   font-size: 2.5rem;
   cursor: pointer;
   &:hover {
     color: #757575;
+  }
+  @media screen and (max-width: 1000px) {
+    left: 7vw;
+    top: -47px;
   }
 `;
 
