@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import logo from "../LOGO.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GoThreeBars } from "react-icons/go";
 
 const Header = ({ setList }) => {
@@ -47,7 +47,9 @@ const Header = ({ setList }) => {
     <HeaderDiv>
       <HeaderUl>
         <Logoli>
-          <img src={logo} alt="logo"></img>
+          <Link to="/">
+            <img src={logo} alt="logo"></img>
+          </Link>
         </Logoli>
         <SearchForm onSubmit={(e) => onSubmit(e)}>
           <select value={filter} onChange={(filter) => filterOnChange(filter)}>
