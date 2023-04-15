@@ -62,6 +62,7 @@ const Header = ({ setList }) => {
             <SideMenuItem>로그인</SideMenuItem>
             <SideMenuItem>회원가입</SideMenuItem>
           </SideMenuList>
+          <SideBackground htmlFor="a" />
           <SideMenuBtn htmlFor="a">
             <GoThreeBars />
           </SideMenuBtn>
@@ -102,6 +103,7 @@ const Logoli = styled.li`
 const SearchForm = styled.form`
   display: flex;
   align-items: center;
+  padding-bottom: 10px;
   width: 450px;
   height: 40px;
   select {
@@ -130,6 +132,7 @@ const MenuUl = styled.ul`
   display: flex;
   align-items: flex-end;
   margin-bottom: 30px;
+  min-width: 166px;
   height: 100%;
   svg {
     display: none;
@@ -141,28 +144,61 @@ const MenuUl = styled.ul`
 `;
 const SideMenuList = styled.ul`
   display: flex;
-  transition: all 3s ease;
   @media screen and (max-width: 1000px) {
     position: absolute;
+    z-index: 1;
     top: 0;
-    left: 100%;
-    padding-top: 30px;
+    left: calc(100% - 150px);
+    display: none;
+    flex-direction: column;
+    padding-top: 50px;
     width: 150px;
-    height: calc(100vh - 30px);
-    background-color: red;
+    height: calc(100vh - 50px);
+    background-color: #5c9e3d;
   }
 `;
 const SideMenuItem = styled.ol`
-  margin-right: 10px;
-  font-size: 20px;
+  min-width: 85px;
+  text-align: center;
+  font-size: 1.3rem;
   font-weight: 700;
+  cursor: pointer;
+  &:hover {
+    transform: translateY(10px);
+    font-size: 1.1rem;
+  }
   @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 5px 0;
-    text-align: center;
+    padding: 10px 0;
   }
+`;
+const SideMenuBtn = styled.label`
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 10px;
+  display: none;
+  svg {
+    cursor: pointer;
+  }
+  @media screen and (max-width: 1000px) {
+    display: block;
+    svg {
+      display: block;
+    }
+  }
+`;
+const SideBackground = styled.label`
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
 `;
 const SideMenuCheck = styled.input`
   display: none;
@@ -170,19 +206,14 @@ const SideMenuCheck = styled.input`
     & + ul {
       top: 0;
       left: calc(100% - 150px);
+      display: block;
+      & + label {
+        display: block;
+        & + label {
+          color: white;
+        }
+      }
     }
-  }
-`;
-const SideMenuBtn = styled.label`
-  position: absolute;
-  top: 0;
-  right: 150px;
-  &:checked{
-    right: 200px;
-  }
-  svg {
-    display: block;
-    cursor: pointer;
   }
 `;
 
