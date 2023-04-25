@@ -28,7 +28,7 @@
 
 |제목|내용|
 |---|---|
-|테스트1|테스트2|
+|![image](https://user-images.githubusercontent.com/88264006/234258941-c1b8acc0-ae57-48a5-b8dc-4759856da322.png)|테스트2|
 |테스트1|테스트2|
 |테스트1|테스트2|
 
