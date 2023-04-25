@@ -24,4 +24,11 @@
 <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"></img>
 <br/>
 
+## 화면구성
+
+|제목|내용|
+|---|---|
+|테스트1|테스트2|
+|테스트1|테스트2|
+|테스트1|테스트2|
 
