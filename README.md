@@ -26,7 +26,7 @@
 
 ## 화면구성
 
-|메인화면||검색 결과화면|
+|메인화면|검색 결과화면|
 |---|---|
 |![image](https://user-images.githubusercontent.com/88264006/234268193-60ebc4dd-d267-43a6-8b69-6c15d99f5aa6.png)|![image](https://user-images.githubusercontent.com/88264006/234270302-a5e00992-ee26-4946-9816-89be2bfbbfc7.png)|
 
