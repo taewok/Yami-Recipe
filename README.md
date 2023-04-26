@@ -1,7 +1,7 @@
 # Yami Recipe
-<p style="text-align:center">
- ![image](https://user-images.githubusercontent.com/88264006/234482385-6aaae114-76b3-4cf0-8f23-6d1cf5bf6f22.png)
-</p><br/>
+
+![image](https://user-images.githubusercontent.com/88264006/234482385-6aaae114-76b3-4cf0-8f23-6d1cf5bf6f22.png)
+<br/>
 
 
 ## 사이트 소개 📓
