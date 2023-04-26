@@ -34,5 +34,8 @@
 |---|---|
 |![image](https://user-images.githubusercontent.com/88264006/234271956-a175d07a-92d5-468d-93d3-f24f37a27b26.png)|![image](https://user-images.githubusercontent.com/88264006/234270302-a5e00992-ee26-4946-9816-89be2bfbbfc7.png)|
 
+## 주요 기능 :bulb: 
+
+⭐<span>메뉴 or 재료로 조리식품의 레시피를 검색</span><br/>
 
 
