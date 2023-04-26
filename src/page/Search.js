@@ -70,6 +70,8 @@ const SearchLi = styled.li`
   padding: 15px 20px;
   border-bottom: 2px solid #dfdfdf;
   a {
+    display: flex;
+    align-items: center;
     height: 100%;
     img {
       width: 250px;
@@ -99,6 +101,7 @@ const SearchLi = styled.li`
 `;
 const CookingTypeDiv = styled.div`
   display: flex;
+  padding: 10px 0;
   color: #555555;
   font-weight: bold;
   span:nth-child(1) {
@@ -112,7 +115,7 @@ const CookingTypeDiv = styled.div`
 const MenuExplanationDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 10px;
   max-width: 100%;
   @media screen and (max-width: 1000px) {

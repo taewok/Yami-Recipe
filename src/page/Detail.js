@@ -126,6 +126,9 @@ const DetailDiv = styled.div`
   width: 100%;
 `;
 const ThumbnailDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 550px;
   img {
     max-width: 100%;
