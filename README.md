@@ -1,6 +1,6 @@
 # Yami Recipe
 
-## Stacks
+## Stacks :hammer:
 
 
 <p><b>Environment</b></p>
@@ -24,13 +24,14 @@
 <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white"></img>
 <br/>
 
-## 화면구성
+## 화면구성 :computer:
 
-|메인화면|검색 결과화면|
+|메인화면|
+|---|
+|![image](https://user-images.githubusercontent.com/88264006/234268193-60ebc4dd-d267-43a6-8b69-6c15d99f5aa6.png)|
+|상세페이지 화면|검색 결과화면|
 |---|---|
-|![image](https://user-images.githubusercontent.com/88264006/234268193-60ebc4dd-d267-43a6-8b69-6c15d99f5aa6.png)|![image](https://user-images.githubusercontent.com/88264006/234270302-a5e00992-ee26-4946-9816-89be2bfbbfc7.png)|
-|상세페이지 화면|""|
-|---|---|
-|![image](https://user-images.githubusercontent.com/88264006/234271956-a175d07a-92d5-468d-93d3-f24f37a27b26.png)||
+|![image](https://user-images.githubusercontent.com/88264006/234271956-a175d07a-92d5-468d-93d3-f24f37a27b26.png)|![image](https://user-images.githubusercontent.com/88264006/234270302-a5e00992-ee26-4946-9816-89be2bfbbfc7.png)|
+
 
 
