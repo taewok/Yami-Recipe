@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Pagination from "../component/Search/Pagination";
 
 const Search = ({ list }) => {
+  const params = useParams();
+
   const [currentPosts, setCurrentPosts] = useState();
   const [currentPageNumber, setCurrentPageNumber] = useState(1); //현재 페이지 번호
   const [postsPerPage, setPostsPerPage] = useState(6); //페이지당 게시물 개수
@@ -12,7 +14,7 @@ const Search = ({ list }) => {
     const indexOfLast = currentPageNumber * postsPerPage;
     const indexOfFirst = indexOfLast - postsPerPage;
     setCurrentPosts(list.slice(indexOfFirst, indexOfLast));
-  }, [currentPageNumber, list, postsPerPage]);
+  }, [currentPageNumber, list, postsPerPage, params]);
 
   return (
     <SearchDiv>
@@ -38,6 +40,7 @@ const Search = ({ list }) => {
         postsPerPage={postsPerPage}
         totalPosts={list.length}
         setCurrentPageNumber={setCurrentPageNumber}
+        searchStr={params.searchStr}
       />
     </SearchDiv>
   );
