@@ -18,8 +18,8 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="search/*" element={<Search list={list} />} />
-        <Route path="search/detail/*" element={<Detail />} />
+        <Route path="search/:searchStr/:pageNum" element={<Search list={list} />} />
+        <Route path="search/:searchStr/:pageNum/detail/:foodTitle" element={<Detail />} />
       </Routes>
     </MainGrid>
   );
