@@ -51,6 +51,11 @@ const Detail = () => {
     nutrient,
   ]);
 
+  //이전 페이지에 스크롤 위치가 그대로 이동되어서  최상위로 바로 이동 시켜주기
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <DetailDiv>
       <PrevBtn onClick={() => navigate(-1)}>
