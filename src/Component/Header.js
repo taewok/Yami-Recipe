@@ -34,11 +34,7 @@ const Header = ({ setList }) => {
           alert("입력이 올바르지 않습니다.");
         else {
           setList(data.data.COOKRCP01.row);
-          navigate("search/1", {
-            state: {
-              num: 1,
-            },
-          });
+          navigate(`search/${text}/1`);
         }
       });
   };
