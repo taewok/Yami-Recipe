@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 
-const Pagination = ({ postsPerPage, totalPosts, setCurrentPageNumber }) => {
+const Pagination = ({
+  postsPerPage,
+  totalPosts,
+  setCurrentPageNumber,
+  searchStr,
+}) => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const params = useParams();
 
   const pageNumbers = [];
   //총 게시물 개수와 페이지당 보여질 개수를 나누어 총페이지 수를 구한다(Math.ceil를 사용하여 결과에 반올림)
@@ -14,17 +19,13 @@ const Pagination = ({ postsPerPage, totalPosts, setCurrentPageNumber }) => {
 
   const onClick = (list) => {
     setCurrentPageNumber(list);
-    navigate(`${list}`, {
-      state: {
-        num: list,
-      },
-    });
+    navigate(`/search/${searchStr}/${list}`);
   };
 
-  //사용자가 이전 버튼을 눌러 첫 렌더링시 url주소에 num을 가져와 페이지 번호에 알맞은 데이터 리스를 출력
+  //사용자가 이전 버튼을 눌러 첫 렌더링시 url주소에 num을 가져와 페이지 번호에 알맞은 데이터 리스트를 출력
   useEffect(() => {
-    setCurrentPageNumber(location.state.num);
-  }, [location.state.num, setCurrentPageNumber]);
+    setCurrentPageNumber(params.pageNum);
+  }, [params, setCurrentPageNumber]);
 
   return (
     <PaginationDiv>
